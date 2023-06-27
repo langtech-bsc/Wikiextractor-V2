@@ -506,7 +506,7 @@ def preprocess_dump(input_file, template_file, expand_templates=True):
     return input_opened, urlbase
 
 
-def process_dump_script(input_opened, out_file, file_size, file_compress,
+def process_dump_script(input_opened,input_file, out_file, file_size, file_compress,
                  file_extension,urlbase):
     # Write to docs or to stdout.
 
@@ -522,7 +522,7 @@ def process_dump_script(input_opened, out_file, file_size, file_compress,
 
     ##
     #  Generatics doc files
-    logging.info("Starting page extraction from %s.", os.path.abspath(input_opened.name) )
+    logging.info("Starting page extraction from %s.", input_file )
     extract_start = default_timer()
 
     ordinal = 1  # page count
@@ -551,16 +551,16 @@ def process_dump_script(input_opened, out_file, file_size, file_compress,
 
 
 
-def process_dump_generator(input_opened,urlbase):
+def process_dump_generator(input_opened,input_file, urlbase):
 
     ##
     #  Generatics doc files
-    logging.info("Starting page extraction from %s.", os.path.abspath(input_opened.name) )
+    logging.info("Starting page extraction from %s.", input_file )
     extract_start = default_timer()
 
     ordinal = 1  # page count
     for id, revid, title, page in collect_pages(input_opened): 
-        doc_info = Extractor(ordinal, revid, urlbase, title, page).extract(output=None, html_safe=True)
+        doc_info = Extractor(ordinal, revid, urlbase, title, page).extract(out=None, html_safe=True)
         if (doc_info):
             ordinal += 1
             yield doc_info
@@ -768,13 +768,14 @@ def main(*args, **kwargs):
                                             )
 
     if (args.generator): #Using the tool as a module
-        return process_dump_generator(input_opened,urlbase)
+        return process_dump_generator(input_opened,input_file, urlbase)
 
         #process_dump(input_file, args.templates, output_path, file_size,
         #                    args.compress, file_extension, args.html_safe,
         #                    not args.no_templates)
     else:  #Using the tool as a a script
         process_dump_script(    input_opened = input_opened, 
+                                input_file = input_file,
                                 out_file = output_path,
                                 file_size=file_size,
                                 file_compress=args.compress,
