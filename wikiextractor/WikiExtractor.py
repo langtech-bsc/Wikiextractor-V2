@@ -689,7 +689,6 @@ def main(*args, **kwargs):
                         help="print program version")
 
     args = parser.parse_args(all_args)
-    #print(args)
 
     Extractor.keepLinks = args.links
     Extractor.HtmlFormatting = args.html
@@ -739,10 +738,6 @@ def main(*args, **kwargs):
     if not Extractor.keepLinks:
         ignoreTag('a')
 
-    # sharing cache of parser templates is too slow:
-    # manager = Manager()
-    # templateCache = manager.dict()
-
     output_path = args.output
     if output_path != '-' and not os.path.isdir(output_path):
         try:
@@ -770,9 +765,6 @@ def main(*args, **kwargs):
     if (args.generator): #Using the tool as a module
         return process_dump_generator(input_opened,input_file, urlbase)
 
-        #process_dump(input_file, args.templates, output_path, file_size,
-        #                    args.compress, file_extension, args.html_safe,
-        #                    not args.no_templates)
     else:  #Using the tool as a a script
         process_dump_script(    input_opened = input_opened, 
                                 input_file = input_file,
@@ -782,19 +774,9 @@ def main(*args, **kwargs):
                                 file_extension=file_extension,
                                 urlbase = urlbase
                             )
-        #process_dump(input_file=input_file,
-        #             template_file=args.templates,
-        #             out_file=output_path,
-        #             file_size=file_size,
-        #             file_compress=args.compress,
-        #             file_extension=file_extension,
-        #             process_count=1,
-        #             html_safe=args.html_safe,
-        #             expand_templates=not args.templates)
 
 
 
 if __name__ == '__main__':
     args = sys.argv  # Exclude the script name (first argument)
     main(*args[1:])  # kwargs
-    # main(sys.argv[2], sys.argv[3:])
