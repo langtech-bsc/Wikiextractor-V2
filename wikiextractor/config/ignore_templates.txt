@@ -1,0 +1,778 @@
+## Do not expand templates with this titles. 
+##      e.g. Millorar format --> is a boilerplate template
+
+
+
+
+## MANTAIN THIS FORMAT
+
+## This is necessary since some templates names are translated to each language
+#   on its own specific wikipedia dump 
+#   New lang. format: 
+#        + LANGUAGE (ISO-639-1): xx where xx is the iso-639-1 code 
+
+
+
+
+
+
++ LANGUAGE (ISO-639-1): af
+Verbeter formaat
+Inligtingsboks
+Infotabel
+
+
+
++ LANGUAGE (ISO-639-1): am
+ቅርጸት አሻሽል።
+Infobox
+መረጃ የማይሰጥ
+
+
+
++ LANGUAGE (ISO-639-1): ar
+تحسين الشكل
+معلومات مربع
+إنفوتابل
+
+
+
++ LANGUAGE (ISO-639-1): as
+বিন্যাস উন্নত কৰক
+ইনফ'বক্স
+ইনফ'টেবল
+
+
+
++ LANGUAGE (ISO-639-1): ay
+Formato ukar juk’amp askinak luraña
+Infobox ukax mä jach’a uñacht’äwiwa
+Infotable ukax mä juk’a pachanakanwa
+
+
+
++ LANGUAGE (ISO-639-1): az
+Formatını təkmilləşdirin
+Məlumat qutusu
+Məlumatlı
+
+
+
++ LANGUAGE (ISO-639-1): be
+Палепшыць фармат
+Інфабокс
+Інфатабліца
+
+
+
++ LANGUAGE (ISO-639-1): bg
+Подобрете формата
+Инфокутия
+Информационна таблица
+
+
+
++ LANGUAGE (ISO-639-1): bn
+ফর্ম্যাট উন্নত করুন
+তথ্যবক্স
+ইনফোটেবল
+
+
+
++ LANGUAGE (ISO-639-1): ca
+Millora el format
+Infobox
+Taula d'informació
+Infotaula
+Infotaula persona
+Infotaula d'organització
+Banderes
+Millorar format
+
+
++ LANGUAGE (ISO-639-1): co
+Migliurà u furmatu
+Infobox
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): cs
+Zlepšit formát
+Infobox
+Informační tabulka
+
+
+
++ LANGUAGE (ISO-639-1): cy
+Gwella fformat
+Blwch gwybodaeth
+Gwybodaeth
+
+
+
++ LANGUAGE (ISO-639-1): da
+Forbedre format
+Infoboks
+Infotabel
+
+
+
++ LANGUAGE (ISO-639-1): de
+Format verbessern
+Infobox
+Infotisch
+
+
+
++ LANGUAGE (ISO-639-1): el
+Βελτιώστε τη μορφή
+Infobox
+Infootable
+
+
+
++ LANGUAGE (ISO-639-1): en
+Improve format
+Infobox
+Infotable
+r
+cite
+
+
+
++ LANGUAGE (ISO-639-1): eo
+Plibonigi formaton
+Informkesto
+Infotabelo
+
+
+
++ LANGUAGE (ISO-639-1): es
+Mejorar el formato
+Caja de información
+tabla de información
+cita libro
+cita web
+cita
+cita requerida
+Ficha
+Bandera
+plainlist
+VT
+AP
+
+
++ LANGUAGE (ISO-639-1): et
+Parandage vormingut
+Infokast
+Infotabel
+
+
+
++ LANGUAGE (ISO-639-1): eu
+Hobetu formatua
+Infokutxa
+Infotaula
+
+
+
++ LANGUAGE (ISO-639-1): fa
+بهبود فرمت
+صندوق اطلاعات
+اطلاعاتی
+
+
+
++ LANGUAGE (ISO-639-1): fi
+Paranna muotoa
+Infolaatikko
+Tietotaulukko
+
+
+
++ LANGUAGE (ISO-639-1): fr
+Améliorer le format
+Boîte d'info
+Tableau d'informations
+
+
+
++ LANGUAGE (ISO-639-1): fy
+Ferbetterje opmaak
+Infobox
+Infotabel
+
+
+
++ LANGUAGE (ISO-639-1): ga
+Feabhas a chur ar fhormáid
+Bosca eolais
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): gd
+Leasaich cruth
+Bogsa fiosrachaidh
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): gl
+Mellorar o formato
+Caixa de información
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): gn
+Oñemoporãve formato
+Infobox rehegua
+Infotable rehegua
+
+
+
++ LANGUAGE (ISO-639-1): gu
+ફોર્મેટમાં સુધારો
+માહિતીબોક્સ
+માહિતીપ્રદ
+
+
+
++ LANGUAGE (ISO-639-1): ha
+Inganta tsari
+Akwatin bayanai
+Ba a iya samun labari
+
+
+
++ LANGUAGE (ISO-639-1): hi
+स्वरूप में सुधार करें
+इन्फोबॉक्स
+जानकारीपूर्ण
+
+
+
++ LANGUAGE (ISO-639-1): hr
+Poboljšajte format
+Infokutija
+Infotablica
+
+
+
++ LANGUAGE (ISO-639-1): hu
+Formátum javítása
+Infobox
+Információs táblázat
+
+
+
++ LANGUAGE (ISO-639-1): hy
+Բարելավել ձևաչափը
+Infobox
+Տեղեկատվական
+
+
+
++ LANGUAGE (ISO-639-1): id
+Tingkatkan format
+Kotak info
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): is
+Bæta snið
+Upplýsingakassi
+Upplýsingatafla
+
+
+
++ LANGUAGE (ISO-639-1): it
+Migliora il formato
+Infobox
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): iw
+שפר את הפורמט
+תיבת מידע
+טבלת מידע
+
+
+
++ LANGUAGE (ISO-639-1): ja
+フォーマットを改善する
+情報ボックス
+インフォテーブル
+
+
+
++ LANGUAGE (ISO-639-1): jw
+Ngapikake format
+Kothak info
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): ka
+ფორმატის გაუმჯობესება
+საინფორმაციო ყუთი
+საინფორმაციო
+
+
+
++ LANGUAGE (ISO-639-1): kk
+Пішімді жақсарту
+Ақпарат жәшігі
+Ақпараттық
+
+
+
++ LANGUAGE (ISO-639-1): km
+កែលម្អទម្រង់
+ប្រអប់ព័ត៌មាន
+ពត៌មាន
+
+
+
++ LANGUAGE (ISO-639-1): kn
+ಸ್ವರೂಪವನ್ನು ಸುಧಾರಿಸಿ
+ಮಾಹಿತಿ ಪೆಟ್ಟಿಗೆ
+ಮಾಹಿತಿಯುಕ್ತ
+
+
+
++ LANGUAGE (ISO-639-1): ko
+형식 개선
+인포박스
+인포테이블
+
+
+
++ LANGUAGE (ISO-639-1): ku
+Format çêtir bikin
+Infobox
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): ky
+Форматты жакшыртуу
+Маалымат кутусу
+Infoable
+
+
+
++ LANGUAGE (ISO-639-1): la
+Improve format
+Infobox
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): ln
+Bongisa format ya kosala
+Boîte d'info
+Infotable ya ba sango
+
+
+
++ LANGUAGE (ISO-639-1): lo
+ປັບປຸງຮູບແບບ
+ກ່ອງຂໍ້ມູນ
+ຂໍ້ມູນໄດ້
+
+
+
++ LANGUAGE (ISO-639-1): lt
+Pagerinkite formatą
+Infobox
+Informacinė lentelė
+
+
+
++ LANGUAGE (ISO-639-1): lv
+Uzlabojiet formātu
+Infokaste
+Informācijas tabula
+
+
+
++ LANGUAGE (ISO-639-1): mg
+Hatsarao ny endrika
+Infobox
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): mi
+Whakapai ake te whakatakotoranga
+Pouaka korero
+He korero
+
+
+
++ LANGUAGE (ISO-639-1): mk
+Подобрете го форматот
+Инфокутија
+Информативно
+
+
+
++ LANGUAGE (ISO-639-1): ml
+ഫോർമാറ്റ് മെച്ചപ്പെടുത്തുക
+ഇൻഫോബോക്സ്
+വിവരദായകമായ
+
+
+
++ LANGUAGE (ISO-639-1): mn
+Форматыг сайжруулах
+Мэдээллийн хайрцаг
+Мэдээлэл авах боломжтой
+
+
+
++ LANGUAGE (ISO-639-1): mr
+स्वरूप सुधारा
+माहितीचौकट
+माहिती करण्यायोग्य
+
+
+
++ LANGUAGE (ISO-639-1): ms
+Perbaiki format
+Kotak maklumat
+Boleh dimaklumkan
+
+
+
++ LANGUAGE (ISO-639-1): mt
+Ittejjeb il-format
+Infobox
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): my
+ဖော်မတ်ကို မြှင့်တင်ပါ။
+အင်ဖိုဘောက်စ်
+Infoable
+
+
+
++ LANGUAGE (ISO-639-1): ne
+ढाँचा सुधार गर्नुहोस्
+जानकारी बाकस
+जानकारीयोग्य
+
+
+
++ LANGUAGE (ISO-639-1): nl
+Formaat verbeteren
+Informatie box
+Infotafel
+
+
+
++ LANGUAGE (ISO-639-1): no
+Forbedre formatet
+Infoboks
+Infotabell
+
+
+
++ LANGUAGE (ISO-639-1): om
+Akkaataa fooyyessuu
+Infobox
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): or
+ଫର୍ମାଟ୍ ଉନ୍ନତ କରନ୍ତୁ |
+ଇନଫୋବକ୍ସ |
+ଇନଫୋଟେବଲ୍ |
+
+
+
++ LANGUAGE (ISO-639-1): pa
+ਫਾਰਮੈਟ ਵਿੱਚ ਸੁਧਾਰ ਕਰੋ
+ਜਾਣਕਾਰੀ ਬਾਕਸ
+ਜਾਣਕਾਰੀ ਦੇਣ ਯੋਗ
+
+
+
++ LANGUAGE (ISO-639-1): pl
+Popraw format
+Skrzynka informacyjna
+Tablica informacyjna
+
+
+
++ LANGUAGE (ISO-639-1): ps
+بڼه ښه کړئ
+معلومات بکس
+د معلوماتو وړ
+
+
+
++ LANGUAGE (ISO-639-1): pt
+Melhorar o formato
+Caixa de informação
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): qu
+Formato nisqa allinchay
+Infobox nisqa
+Infotable nisqa
+
+
+
++ LANGUAGE (ISO-639-1): ro
+Îmbunătățiți formatul
+Infobox
+Infotabel
+
+
+
++ LANGUAGE (ISO-639-1): ru
+Улучшить формат
+Информационное окно
+Информация
+
+
+
++ LANGUAGE (ISO-639-1): rw
+Kunoza imiterere
+Infobox
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): sa
+प्रारूपं सुदृढं कुर्वन्तु
+इन्फोबॉक्स
+इन्फोटेबल
+
+
+
++ LANGUAGE (ISO-639-1): sd
+فارميٽ کي بهتر ڪريو
+Infobox
+معلوماتي
+
+
+
++ LANGUAGE (ISO-639-1): si
+ආකෘතිය වැඩි දියුණු කරන්න
+තොරතුරු පෙට්ටිය
+තොරතුරු දැනගත හැකි
+
+
+
++ LANGUAGE (ISO-639-1): sk
+Zlepšite formát
+Infobox
+Informačná tabuľka
+
+
+
++ LANGUAGE (ISO-639-1): sl
+Izboljšajte format
+Infopolje
+Infotabela
+
+
+
++ LANGUAGE (ISO-639-1): sm
+Fa'aleleia le faatulagaga
+Pusa fa'amatalaga
+Fa'amatalaga
+
+
+
++ LANGUAGE (ISO-639-1): sn
+Natsiridza chimiro
+Infobox
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): so
+Hagaajinta qaabka
+Infobox
+Aan la heli karin
+
+
+
++ LANGUAGE (ISO-639-1): sq
+Përmirësoni formatin
+Infobox
+Infotative
+
+
+
++ LANGUAGE (ISO-639-1): sr
+Побољшајте формат
+Инфокутија
+Инфотабле
+
+
+
++ LANGUAGE (ISO-639-1): st
+Ntlafatsa sebopeho
+Infobox
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): su
+Ningkatkeun format
+Kotak inpormasi
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): sv
+Förbättra formatet
+Infobox
+Infotabell
+
+
+
++ LANGUAGE (ISO-639-1): sw
+Boresha umbizo
+Infobox
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): ta
+வடிவமைப்பை மேம்படுத்தவும்
+தகவல் பெட்டி
+தகவல் தரக்கூடியது
+
+
+
++ LANGUAGE (ISO-639-1): te
+ఆకృతిని మెరుగుపరచండి
+సమాచార పెట్టె
+ఇన్ఫోటబుల్
+
+
+
++ LANGUAGE (ISO-639-1): tg
+Форматро такмил диҳед
+Қуттии маълумот
+Маълумотнок
+
+
+
++ LANGUAGE (ISO-639-1): th
+ปรับปรุงรูปแบบ
+กล่องข้อมูล
+ข้อมูล
+
+
+
++ LANGUAGE (ISO-639-1): ti
+ቅርጺ ምምሕያሽ
+ኢንፎቦክስ
+ኢንፎቴብል
+
+
+
++ LANGUAGE (ISO-639-1): tk
+Formatyny gowulandyrmak
+Infobox
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): tl
+Pagbutihin ang format
+Infobox
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): tr
+Biçimi iyileştir
+Bilgi kutusu
+bilgi tablosu
+
+
+
++ LANGUAGE (ISO-639-1): ts
+Nantswisa xivumbeko
+Bokisi ra vuxokoxoko
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): tt
+Форматны яхшырту
+Инфобокс
+Мәгълүмат
+
+
+
++ LANGUAGE (ISO-639-1): uk
+Покращити формат
+Інфобокс
+Інфотаблиця
+
+
+
++ LANGUAGE (ISO-639-1): ur
+فارمیٹ کو بہتر بنائیں
+معلومات خانہ
+قابل معلومات
+
+
+
++ LANGUAGE (ISO-639-1): uz
+Formatni yaxshilash
+Infobox
+Ma'lumot olish mumkin
+
+
+
++ LANGUAGE (ISO-639-1): vi
+Cải thiện định dạng
+Hộp thông tin
+thông tin
+
+
+
++ LANGUAGE (ISO-639-1): xh
+Phucula ifomathi
+Infobox
+Ulwazi
+
+
+
++ LANGUAGE (ISO-639-1): yi
+פֿאַרבעסערן פֿאָרמאַט
+Infobox
+ינפאָטאַבלע
+
+
+
++ LANGUAGE (ISO-639-1): yo
+Ṣe ilọsiwaju ọna kika
+Infobox
+Infotable
+
+
+
++ LANGUAGE (ISO-639-1): zu
+Thuthukisa ifomethi
+Ibhokisi lemininingwane
+Ulwazi

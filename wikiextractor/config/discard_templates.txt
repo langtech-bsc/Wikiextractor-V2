@@ -1,0 +1,554 @@
+## Discard articles containing this template titles. e.g. Disambiguation, etc.
+
+
+## WARNING!: This specified templates will cause the WHOLE doc. to be discarded from extraction. Use with caution
+#   Very useful for cleaning (e.g.) disambiguacion pages
+
+
+
+## MANTAIN THIS FORMAT
+
+## This is necessary since some templates names are translated to each language
+#   on its own specific wikipedia dump 
+#   New lang. format: 
+#        + LANGUAGE (ISO-639-1): xx where xx is the iso-639-1 code 
+#   Example of templates names:
+#           Disambiguation (en) 
+#           Desambiguación(es)
+
+
+
++ LANGUAGE (ISO-639-1): af
+Ondubbelsinning
+
+
+
++ LANGUAGE (ISO-639-1): am
+አለመስማማት
+
+
+
++ LANGUAGE (ISO-639-1): ar
+توضيح
+
+
+
++ LANGUAGE (ISO-639-1): as
+অস্পষ্টতা
+
+
+
++ LANGUAGE (ISO-639-1): ay
+Desambiguación ukax mä juk’a pachanakanwa
+
+
+
++ LANGUAGE (ISO-639-1): az
+Anlamsızlıq
+
+
+
++ LANGUAGE (ISO-639-1): be
+Неадназначнасць
+
+
+
++ LANGUAGE (ISO-639-1): bg
+Недвусмислие
+
+
+
++ LANGUAGE (ISO-639-1): bn
+দ্ব্যর্থতা
+
+
+
++ LANGUAGE (ISO-639-1): ca
+Desambiguació
+
+
+
+
++ LANGUAGE (ISO-639-1): co
+Disambiguazione
+
+
+
++ LANGUAGE (ISO-639-1): cs
+Rozcestník
+
+
+
++ LANGUAGE (ISO-639-1): cy
+Dadamwyso
+
+
+
++ LANGUAGE (ISO-639-1): da
+Disambiguation
+
+
+
++ LANGUAGE (ISO-639-1): de
+Begriffsklärung
+
+
+
++ LANGUAGE (ISO-639-1): el
+Αποσαφήνιση
+
+
+
++ LANGUAGE (ISO-639-1): en
+Disambiguation
+
+
+
++ LANGUAGE (ISO-639-1): eo
+Malambiguigo
+
+
+
++ LANGUAGE (ISO-639-1): es
+Desambiguación
+Otros usos
+
+
+
++ LANGUAGE (ISO-639-1): et
+Ühesõnastamine
+
+
+
++ LANGUAGE (ISO-639-1): eu
+Desanbiguazioa
+
+
+
++ LANGUAGE (ISO-639-1): fa
+ابهام زدایی
+
+
+
++ LANGUAGE (ISO-639-1): fi
+Yksiselitteisyys
+
+
+
++ LANGUAGE (ISO-639-1): fr
+Désambiguïsation
+
+
+
++ LANGUAGE (ISO-639-1): fy
+Disambiguation
+
+
+
++ LANGUAGE (ISO-639-1): ga
+Dí-athbhrí
+
+
+
++ LANGUAGE (ISO-639-1): gd
+Disambiguation
+
+
+
++ LANGUAGE (ISO-639-1): gl
+Desambiguación
+
+
+
++ LANGUAGE (ISO-639-1): gn
+Desambiguación rehegua
+
+
+
++ LANGUAGE (ISO-639-1): gu
+અસંદિગ્ધતા
+
+
+
++ LANGUAGE (ISO-639-1): ha
+Rashin fahimta
+
+
+
++ LANGUAGE (ISO-639-1): hi
+बहुविकल्पी
+
+
+
++ LANGUAGE (ISO-639-1): hr
+Višeznačnost
+
+
+
++ LANGUAGE (ISO-639-1): hu
+Egyértelműsítés
+
+
+
++ LANGUAGE (ISO-639-1): hy
+Տարբերակում
+
+
+
++ LANGUAGE (ISO-639-1): id
+Disambiguasi
+
+
+
++ LANGUAGE (ISO-639-1): is
+Ótvíræðing
+
+
+
++ LANGUAGE (ISO-639-1): it
+Disambiguazione
+
+
+
++ LANGUAGE (ISO-639-1): iw
+ביעור
+
+
+
++ LANGUAGE (ISO-639-1): ja
+曖昧さ回避
+
+
+
++ LANGUAGE (ISO-639-1): jw
+disambiguasi
+
+
+
++ LANGUAGE (ISO-639-1): ka
+გაურკვევლობა
+
+
+
++ LANGUAGE (ISO-639-1): kk
+Анықтама
+
+
+
++ LANGUAGE (ISO-639-1): km
+ភាពមិនច្បាស់លាស់
+
+
+
++ LANGUAGE (ISO-639-1): kn
+ದ್ವಂದ್ವಾರ್ಥತೆ
+
+
+
++ LANGUAGE (ISO-639-1): ko
+명확화
+
+
+
++ LANGUAGE (ISO-639-1): ku
+Nelihevkirin
+
+
+
++ LANGUAGE (ISO-639-1): ky
+Диамбигуация
+
+
+
++ LANGUAGE (ISO-639-1): la
+Disambiguatio
+
+
+
++ LANGUAGE (ISO-639-1): ln
+Kolongola makambo oyo ezali na ndimbola
+
+
+
++ LANGUAGE (ISO-639-1): lo
+ຄວາມຜິດຖຽງກັນ
+
+
+
++ LANGUAGE (ISO-639-1): lt
+Nurodymas
+
+
+
++ LANGUAGE (ISO-639-1): lv
+Noskaidrošana
+
+
+
++ LANGUAGE (ISO-639-1): mg
+ampy
+
+
+
++ LANGUAGE (ISO-639-1): mi
+Te whakamaarama
+
+
+
++ LANGUAGE (ISO-639-1): mk
+Појаснување
+
+
+
++ LANGUAGE (ISO-639-1): ml
+അവ്യക്തത
+
+
+
++ LANGUAGE (ISO-639-1): mn
+Хоёрдмол утгагүй байдал
+
+
+
++ LANGUAGE (ISO-639-1): mr
+निःसंदिग्धता
+
+
+
++ LANGUAGE (ISO-639-1): ms
+nyahkekaburan
+
+
+
++ LANGUAGE (ISO-639-1): mt
+Diżambigwazzjoni
+
+
+
++ LANGUAGE (ISO-639-1): my
+ရှင်းလင်းချက်
+
+
+
++ LANGUAGE (ISO-639-1): ne
+अस्पष्टता
+
+
+
++ LANGUAGE (ISO-639-1): nl
+ondubbelzinnig
+
+
+
++ LANGUAGE (ISO-639-1): no
+Disambiguation
+
+
+
++ LANGUAGE (ISO-639-1): om
+Wal-xaxaa baasuu
+
+
+
++ LANGUAGE (ISO-639-1): or
+ବିଭାଜନ
+
+
+
++ LANGUAGE (ISO-639-1): pa
+ਅਸਪਸ਼ਟਤਾ
+
+
+
++ LANGUAGE (ISO-639-1): pl
+Ujednoznacznienie
+
+
+
++ LANGUAGE (ISO-639-1): ps
+بې طرفه کول
+
+
+
++ LANGUAGE (ISO-639-1): pt
+Desambiguação
+
+
+
++ LANGUAGE (ISO-639-1): qu
+Desambiguación nisqa
+
+
+
++ LANGUAGE (ISO-639-1): ro
+Dezambiguizare
+
+
+
++ LANGUAGE (ISO-639-1): ru
+Многозначность
+
+
+
++ LANGUAGE (ISO-639-1): rw
+Kutavuga rumwe
+
+
+
++ LANGUAGE (ISO-639-1): sa
+अस्पष्टीकरणम्
+
+
+
++ LANGUAGE (ISO-639-1): sd
+اختلاف
+
+
+
++ LANGUAGE (ISO-639-1): si
+අපැහැදිලි කිරීම
+
+
+
++ LANGUAGE (ISO-639-1): sk
+Jednoznačnosť
+
+
+
++ LANGUAGE (ISO-639-1): sl
+Razdvoumnost
+
+
+
++ LANGUAGE (ISO-639-1): sm
+Fa'avasegaina
+
+
+
++ LANGUAGE (ISO-639-1): sn
+Disambiguation
+
+
+
++ LANGUAGE (ISO-639-1): so
+Kala-bax
+
+
+
++ LANGUAGE (ISO-639-1): sq
+Padyshim
+
+
+
++ LANGUAGE (ISO-639-1): sr
+Разјашњење
+
+
+
++ LANGUAGE (ISO-639-1): st
+Ho se utloisise
+
+
+
++ LANGUAGE (ISO-639-1): su
+disambiguasi
+
+
+
++ LANGUAGE (ISO-639-1): sv
+Disambiguation
+
+
+
++ LANGUAGE (ISO-639-1): sw
+Kutoelewana
+
+
+
++ LANGUAGE (ISO-639-1): ta
+தெளிவின்மை
+
+
+
++ LANGUAGE (ISO-639-1): te
+అయోమయ నివృత్తి
+
+
+
++ LANGUAGE (ISO-639-1): tg
+Муайянкунӣ
+
+
+
++ LANGUAGE (ISO-639-1): th
+ความไม่ชัดเจน
+
+
+
++ LANGUAGE (ISO-639-1): ti
+ምፍታሕ ምድንጋር
+
+
+
++ LANGUAGE (ISO-639-1): tk
+Aýralyk
+
+
+
++ LANGUAGE (ISO-639-1): tl
+Paglilinaw
+
+
+
++ LANGUAGE (ISO-639-1): tr
+anlam ayrımı
+
+
+
++ LANGUAGE (ISO-639-1): ts
+Ku hambanyisa ku nga twisiseki
+
+
+
++ LANGUAGE (ISO-639-1): tt
+Бер-берсенә каршы тору
+
+
+
++ LANGUAGE (ISO-639-1): uk
+Неоднозначність
+
+
+
++ LANGUAGE (ISO-639-1): ur
+ابہام
+
+
+
++ LANGUAGE (ISO-639-1): uz
+Aniqlash
+
+
+
++ LANGUAGE (ISO-639-1): vi
+định hướng
+
+
+
++ LANGUAGE (ISO-639-1): xh
+Ukungaboni ngasonye
+
+
+
++ LANGUAGE (ISO-639-1): yi
+דיסאַמביגיואַטיאָן
+
+
+
++ LANGUAGE (ISO-639-1): yo
+Iyatọ
+
+
+
++ LANGUAGE (ISO-639-1): zu
+Ukungaboni ngaso linye
