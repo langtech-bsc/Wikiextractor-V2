@@ -45,7 +45,7 @@ Tested under python 3.7.
 # Use as a script
 Here is an **easy example of use** as a single tool to extract text-plain chunks of size 1MB with the best cleaning available:
 ```python
-python -m WikiExtractor INPUT_DUMP_FILE \
+python -m wikiextractor/WikiExtractor.py INPUT_DUMP_FILE \
                         --output OUTPUT_FOLDER \
                         --bytes 1M \
                         --templates TEMPLATES_PATH \
