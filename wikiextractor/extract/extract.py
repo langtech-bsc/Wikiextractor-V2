@@ -1620,7 +1620,11 @@ class Extractor():
         # logging.debug('instantiated %d %s', len(self.frame), instantiated)
 
         # Sometimes this generates html code with templates inside
-        instantiated_html_clean = BeautifulSoup(instantiated, 'html.parser').get_text()
+        try:
+            instantiated_html_clean = BeautifulSoup(instantiated, 'html.parser').get_text()
+        except Exception as e:
+            instantiated_html_clean = instantiated
+
         value = self.expandTemplates(instantiated_html_clean)
         #value = self.expandTemplates(instantiated)
 
@@ -1860,6 +1864,9 @@ def findBalanced(text, openDelim, closeDelim):
 
 
 def balance_brackets(string):
+
+    if(string is None):
+        return None
     # Initialize an empty stack to keep track of opening and closing parentheses
     stack = []
      
