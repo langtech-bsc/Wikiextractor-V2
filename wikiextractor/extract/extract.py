@@ -1438,8 +1438,10 @@ class Extractor():
                     return str(parts[1])
 
                 except:
-                    return str(parts[1])
-
+                    if( len(parts)>=2 ):
+                        return str(parts[1])
+                    else:
+                        return ''
                 
             else: # (This should never be the case), but code shuold not break...
                 return ''
