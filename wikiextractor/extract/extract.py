@@ -1510,6 +1510,8 @@ class Extractor():
                 final_coord_2 = ''    
                 if(any (coord_1) and len(coord_1) == len(coord_2)):
                     for i,e in enumerate(coord_1):
+                        if(i > (len(_aux_template_coord_aux_var) -1)  ):
+                            break
                         final_coord_1 += str(coord_1[i]) + _aux_template_coord_aux_var[i] 
                         final_coord_2 += str(coord_2[i]) + _aux_template_coord_aux_var[i]
                     final_coord_1 +=  coord_1_dir
