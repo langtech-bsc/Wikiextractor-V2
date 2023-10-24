@@ -1434,9 +1434,13 @@ class Extractor():
                     return finalParse
                 except babel.core.UnknownLocaleError as e:
                     # Some locale langauages might not work. E.g. "grc" or "an"
-                    logging.debug('Lang. Template not found: '+ str(parts[1]))
-                    return str(parts[1])
-
+                    if( len(parts)>=2 ):
+                        logging.debug('Lang. Template not found: '+ str(parts[1]))
+                        return str(parts[1])
+                    else:
+                        logging.debug('Lang. Template not found and not language detected in template name: ' + title )
+                        return ''
+                    
                 except:
                     if( len(parts)>=2 ):
                         return str(parts[1])
