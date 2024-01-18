@@ -972,8 +972,9 @@ class Template(list):
 
         return ''.join([tpl.subst(params, extractor, depth) for tpl in self])
 
+
     def __str__(self):
-        return ''.join([str(x) for x in self])
+        return ''.join([str(x) for x in self if x if x is not None])
 
 
 class TemplateText(str):
@@ -1030,6 +1031,8 @@ class TemplateArg():
         elif self.default:            # use the default value
             defaultValue = self.default.subst(params, extractor, depth+1)
             res =  extractor.expandTemplates(defaultValue)
+            if res is None:
+                return ''
         #logging.debug('subst arg %d %s -> %s' % (depth, paramName, res))
         return res
 
@@ -1250,14 +1253,14 @@ class Extractor():
         res = ''
         if len(self.frame) >= self.maxTemplateRecursionLevels:
             self.recursion_exceeded_1_errs += 1
-            return res
+            #return res
+            return None
 
         # logging.debug('<expandTemplates ' + str(len(self.frame)))
 
         cur = 0
         # look for matching {{...}}
         for s, e in findMatchingBraces(wikitext, 2):
-
             content = self.expandTemplate(wikitext[s + 2:e - 2], language)
             if (content is None):
                 # This happens when a template specified in
@@ -1280,7 +1283,7 @@ class Extractor():
 
         if not parameters:
             return templateParams
-        logging.debug('<templateParams: %s', '|'.join(parameters))
+        #logging.debug('<templateParams: %s', '|'.join(parameters))
 
         # Parameters can be either named or unnamed. In the latter case, their
         # name is defined by their ordinal position (1, 2, 3, ...).
@@ -1320,7 +1323,14 @@ class Extractor():
             # The '=' might occurr within quotes:
             # ''''<span lang="pt-pt" xml:lang="pt-pt">cénicas</span>'''
 
-            m = re.match(" *([^=']*?) *=(.*)", param, re.DOTALL)
+
+
+
+            try:
+                m = re.match(" *([^=']*?) *=(.*)", param, re.DOTALL)
+            except TypeError as e:
+                continue
+
             if m:
                 # This is a named parameter.  This case also handles parameter
                 # assignments like "2=xxx", where the number of an unnamed
@@ -1394,6 +1404,7 @@ class Extractor():
             self.recursion_exceeded_2_errs += 1
             # logging.debug('   INVOCATION> %d %s', len(self.frame), body)
             return ''
+            #return None
 
         logging.debug('INVOCATION %d %s', len(self.frame), body)
 
@@ -1473,6 +1484,8 @@ class Extractor():
             else:
                 segle_tpl = '{{uc:' + str(parts[1]) +'}}'
                 segle = self.expandTemplates(segle_tpl)
+                if segle is None:
+                    return None
 
             if(len(parts) == 2):
                 return 'segle ' + str(segle)
@@ -1552,8 +1565,16 @@ class Extractor():
             funct = title[:colon]
             parts[0] = title[colon + 1:].strip()  # side-effect (parts[0] not used later)
             # arguments after first are not evaluated
+            #ret = callParserFunction(funct, parts, self.frame)
+            #return self.expandTemplates(ret)
+
             ret = callParserFunction(funct, parts, self.frame)
-            return self.expandTemplates(ret)
+            call_result = self.expandTemplates(ret)
+            if call_result is None:
+                return ''
+            else:
+                return call_result
+            #return 
 
         title = fullyQualifiedTemplateTitle(title)
         if not title:
@@ -1613,7 +1634,7 @@ class Extractor():
             # Evaluate parameters, since they may contain templates, including
             # the symbol "=".
             # {{#ifexpr: {{{1}}} = 1 }}
-            params = [self.expandTemplates(p) for p in params]
+            params = [self.expandTemplates(p) for p in params if p is not None]
 
         # build a dict of name-values for the parameter values
         params = self.templateParams(params)
@@ -1634,10 +1655,14 @@ class Extractor():
             instantiated_html_clean = instantiated
 
         value = self.expandTemplates(instantiated_html_clean)
+        if value is None:
+            #self.frame.pop()
+            return ''
         #value = self.expandTemplates(instantiated)
 
         #sometimes value has unbalances brackets
         value = balance_brackets(value)
+
 
         self.frame.pop()
         # logging.debug('   INVOCATION> %s %d %s', title, len(self.frame), value)
