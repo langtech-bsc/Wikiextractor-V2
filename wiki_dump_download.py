@@ -137,7 +137,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Download Wikimedia project dumps.")
     parser.add_argument("--check-langs", action="store_true", help="Check the availability of languages for each project type.")
     parser.add_argument("--download", type=str, choices=WIKI_PATTERNS.keys(), help="Download the articles dump for the specified wiki project type.")
-    parser.add_argument("--output-path", type=str, action="store_true", help="Output path for dumps")
+    parser.add_argument("--output-path", type=str, help="Output path for dumps")
 
     args = parser.parse_args()
 
