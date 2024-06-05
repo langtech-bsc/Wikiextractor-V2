@@ -8,7 +8,7 @@ the relevant XML dump files for processing by WikiExtractor.
 
 Usage:
     - Checks the availability of languages for each project type. python script_name.py --check-langs
-    - Downloads the Wikipedia articles dumps for available languages. python script_name.py --download wikipedia
+    - Downloads the Wikipedia articles dumps for available languages. python script_name.py --download wikipedia --output_path "/home/downloads/"
 
 Dependencies:
     - wiki_data_dump: A module to interact with Wikimedia dump files.
@@ -18,6 +18,7 @@ Dependencies:
 
 from wiki_data_dump import WikiDump, File
 import re
+import os
 import argparse
 from typing import List
 
@@ -130,7 +131,10 @@ def download(wiki_type: str, output_path: str):
         print(f"[INFO] Downloading {len(pages_articles)} articles from {w}")
         # Download
         for file in pages_articles:
-            WIKI.download(file, destination=output_path).join()
+            WIKI.download(
+                file,
+                destination=os.path.join(output_path, os.path.basename(file.url))
+            ).join()
 
 
 if __name__ == "__main__":
