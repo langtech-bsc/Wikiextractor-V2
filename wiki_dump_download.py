@@ -7,8 +7,8 @@ The script filters wikis based on available language codes and project types, an
 the relevant XML dump files for processing by WikiExtractor.
 
 Usage:
-    - The script first checks the availability of languages for each project type.
-    - Then it downloads the Wikipedia articles dumps for available languages.
+    - Checks the availability of languages for each project type. python script_name.py --check-langs
+    - Downloads the Wikipedia articles dumps for available languages. python script_name.py --download wikipedia
 
 Dependencies:
     - wiki_data_dump: A module to interact with Wikimedia dump files.
