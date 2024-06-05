@@ -18,6 +18,7 @@ Dependencies:
 
 from wiki_data_dump import WikiDump, File
 import re
+import argparse
 from typing import List
 
 ALIA_LANGS = {
@@ -105,7 +106,7 @@ def check_lang_availability():
         print(f"[INFO] {len(filter_w)} languages available for {k}. Missing languages: {miss}")
 
 
-def download(wiki_type: str):
+def download(wiki_type: str, output_path: str):
     """
     Download the articles dump files for a specific wiki project type.
 
@@ -129,11 +130,19 @@ def download(wiki_type: str):
         print(f"[INFO] Downloading {len(pages_articles)} articles from {w}")
         # Download
         for file in pages_articles:
-            WIKI.download(file).join()
+            WIKI.download(file, destination=output_path).join()
 
 
-# Check language availability
-check_lang_availability()
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Download Wikimedia project dumps.")
+    parser.add_argument("--check-langs", action="store_true", help="Check the availability of languages for each project type.")
+    parser.add_argument("--download", type=str, choices=WIKI_PATTERNS.keys(), help="Download the articles dump for the specified wiki project type.")
+    parser.add_argument("--output-path", type=str, action="store_true", help="Output path for dumps")
 
-# Download Wikipedia articles dumps
-download("wikipedia")
+    args = parser.parse_args()
+
+    if args.check_langs:
+        check_lang_availability()
+
+    if args.download:
+        download(args.download, args.output_path)
