@@ -131,10 +131,12 @@ def download(wiki_type: str, output_path: str):
         print(f"[INFO] Downloading {len(pages_articles)} articles from {w}")
         # Download
         for file in pages_articles:
+            file_path = os.path.join(output_path, os.path.basename(file.url))
             WIKI.download(
                 file,
-                destination=os.path.join(output_path, os.path.basename(file.url))
+                destination=file_path
             ).join()
+            print(f"[INFO] Downloaded {os.path.basename(file.url)} to {file_path}")
 
 
 if __name__ == "__main__":
