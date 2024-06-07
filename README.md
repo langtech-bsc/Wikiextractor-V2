@@ -172,6 +172,8 @@ The script is invoked with a Wikipedia dump file as an argument. An input **dump
 
 You can download all Wikimedia dumps with the [wiki_dump_download.py](https://github.com/langtech-bsc/Wikiextractor-V2/blob/main/wiki_dump_download.py) script, using the [wiki-data-dump library](https://pypi.org/project/wiki-data-dump/), which handles requests to the [Wikimedia Data Dumps](https://dumps.wikimedia.org/) and its [mirrors](https://dumps.wikimedia.org/mirrors.html). By default, it downloads 'pages-articles.xml.bz2' files for each language, which appear corrupted when extracted (bzip2 or any other extraction command won't work with these files). Just rename the file and remove the .bz2 extension, and it will appear as a normal XML file that the Wikiextractor-V2 can handle. Otherwise, download 'pages-multistream-articles.xml', which is downloaded as XML by default.
 
+```python wiki_dump_download.py --download wikipedia --output_path "/home/downloads/"```
+
 ## Output
 The output can **behave** in **two diferent ways**.
 1. One of them is to store output in several files of similar size in a given directory, given by `--output`. Each file located in "output" is a **chunk of data** of size N (bytes) wich can be specified with ``--bytes`. Each chunk will be compressed if `--compress` arg is passed.
