@@ -170,7 +170,7 @@ SPECIAL ARGUMENTS:
 
 The script is invoked with a Wikipedia dump file as an argument. An input **dump file** is a .xml file (it can be compressed as .gz or .bz2 format).
 
-
+You can download all Wikimedia dumps with the [wiki_dump_download.py](https://github.com/langtech-bsc/Wikiextractor-V2/blob/main/wiki_dump_download.py) script, using the [wiki-data-dump library](https://pypi.org/project/wiki-data-dump/), which handles requests to the [Wikimedia Data Dumps](https://dumps.wikimedia.org/) and its [mirrors](https://dumps.wikimedia.org/mirrors.html). By default, it downloads 'pages-articles.xml.bz2' files for each language, which appear corrupted when extracted (bzip2 or any other extraction command won't work with these files). Just rename the file and remove the .bz2 extension, and it will appear as a normal XML file that the Wikiextractor-V2 can handle. Otherwise, download 'pages-multistream-articles.xml', which is downloaded as XML by default.
 
 ## Output
 The output can **behave** in **two diferent ways**.
