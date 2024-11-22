@@ -116,7 +116,7 @@ def download(wiki_type: str, output_path: str):
     """
     print(f"[INFO] Using mirror: {WIKI.mirror}")
     # Get all Wikis without language filtering
-    filter_w = filter_wikis(WIKI.wikis, WIKI_PATTERNS[wiki_type], None)
+    filter_w = filter_wikis(WIKI.wikis, WIKI_PATTERNS[wiki_type], ALIA_LANGS.keys())
     # Download wikis for each language
     for w in filter_w:
         # Uncomment the following line to see all files for a given language
