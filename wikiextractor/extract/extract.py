@@ -46,7 +46,7 @@ discardElements = [
 
 
 
-FILE_SEPARATOR = '\n\n\n' *3  +   '#' * 30 + '\n'
+FILE_SEPARATOR = '\n'
 
 
 ##
