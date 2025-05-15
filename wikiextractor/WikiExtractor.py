@@ -529,7 +529,7 @@ def process_dump_script(input_opened,input_file, out_file, file_size, file_compr
 
     for id, revid, title, page in collect_pages(input_opened): 
         #out :output folder path
-        if ( Extractor(ordinal, revid, urlbase, title, page).extract(output, html_safe=True) ):
+        if ( Extractor(id, revid, urlbase, title, page).extract(output, html_safe=True) ):
             ordinal += 1
             #logging.debug("\t Doc. saved:" + str(ordinal))
         #else empty doc
