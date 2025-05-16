@@ -748,10 +748,10 @@ def main(*args, **kwargs):
     elif (output_path is None and args.generator is None):
         output_path = '-'
 
-    if (args.bytes):
+    if (args.txt):
         file_extension = '.txt'
     elif (args.json):
-        file_extension = '.json'
+        file_extension = '.jsonl'
     else:
         file_extension = ''
 
