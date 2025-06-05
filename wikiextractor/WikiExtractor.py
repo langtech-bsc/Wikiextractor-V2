@@ -50,6 +50,9 @@ if extract_path not in sys.path:
 from extract import Extractor, ignoreTag, define_template, acceptedNamespaces
 
 
+FORMAT = '[%(asctime)s][%(name)s][%(levelname)s] - %(message)s'
+logging.basicConfig(format=FORMAT)
+
 # ===========================================================================
 
 # Program version
@@ -653,6 +656,8 @@ def main(*args, **kwargs):
                         help="write output in json format instead of the default <doc> format")
     groupO.add_argument("--txt", action="store_true",
                         help="write output in plain text format instead of the default <doc> format")
+    groupO.add_argument("--markdown", action="store_true", default=False,
+                        help="parse text content to Markdown format (sections titles with #, ##, ### ...)")
     groupO.add_argument("-c", "--compress", action="store_true",
                         help="compress output files using bzip")
 
@@ -695,8 +700,10 @@ def main(*args, **kwargs):
     if args.html:
         Extractor.keepLinks = True
     Extractor.to_json = args.json
+    Extractor.markdown = args.markdown
     Extractor.to_txt = args.txt
     Extractor.generator = args.generator
+
 
     # Discard some Wikipedia sections specifying their title
     if (args.discard_sections):
@@ -724,8 +731,6 @@ def main(*args, **kwargs):
     if args.namespaces:
         acceptedNamespaces = set(args.namespaces.split(','))
 
-    FORMAT = '%(levelname)s: %(message)s'
-    logging.basicConfig(format=FORMAT)
 
     logger = logging.getLogger()
     if not args.quiet:

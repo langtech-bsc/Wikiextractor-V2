@@ -317,7 +317,7 @@ def compact(text, mark_headers=False):
                 title += '.'
 
             if mark_headers:
-                title = "## " + title
+                title = "#"*lev + " " + title
 
             headers[lev] = title
             # drop previous headers
@@ -1077,6 +1077,9 @@ class Extractor():
     to_json = False
     to_txt =  True
 
+    # Text format
+    markdown = False
+
     ## Behave as a generator insted of writing in file or stdout
     generator = False
 
@@ -1084,7 +1087,7 @@ class Extractor():
     language = ''
 
 
-    def __init__(self, id, revid, urlbase, title, page):
+    def __init__(self, id, revid, urlbase, title, page,):
         """
         :param page: a list of lines.
         """
@@ -1118,9 +1121,6 @@ class Extractor():
         self.magicWords['currenttime'] = time.strftime('%H:%M:%S')
 
 
-        
-
-
         text = clean(self, text, expand_templates=expand_templates,
                      language = self.language, html_safe=html_safe)
         if(text is None):
@@ -1135,7 +1135,7 @@ class Extractor():
         """
         logging.debug("%s\t%s", self.id, self.title)
         text = ''.join(self.page)
-        text = self.clean_text(text, html_safe=html_safe)
+        text = self.clean_text(text, html_safe=html_safe, mark_headers=self.markdown,)
 
         #  This should ban dissambiguation pages or other
         # banned tamplates at config/discard_templates.txt
@@ -1145,7 +1145,10 @@ class Extractor():
 
 
         #Insert page title at the beginnig of doc.
-        text.insert(0, self.title.split('\n')[0]  )
+        if self.markdown:
+            text.insert(0, '# ' + self.title.split('\n')[0])
+        else:
+            text.insert(0, self.title.split('\n')[0]  )
 
         if self.to_json:
 

@@ -43,6 +43,7 @@ Some libraries must be installed in order to execute the tool. They are specifie
 Tested under python 3.7.
 
 # Use as a script
+
 Here is an **easy example of use** as a single tool to extract text-plain chunks of size 1MB with the best cleaning available:
 ```python
 python -m wikiextractor/WikiExtractor.py INPUT_DUMP_FILE \
@@ -53,7 +54,20 @@ python -m wikiextractor/WikiExtractor.py INPUT_DUMP_FILE \
                         --discard_sections \
                         --discard_templates \
                         --ignore_templates \
+
 ```
+
+
+Example to extract markdown formatted articles in JSON format, with chunks of size 1MB.
+```python
+python -m wikiextractor/WikiExtractor.py INPUT_DUMP_FILE \
+                        --output OUTPUT_FOLDER \
+                        --bytes 1M \
+                        --json \
+                        --markdonwn
+```
+
+
 
 # Use as a module
 
@@ -116,10 +130,13 @@ OUTPUT ARGUMENTS:
           preserve links
   
   --json 
-          write output in json format instead of the default <doc> format
+        write output in json format instead of the default <doc> format
   
   --txt                
         write output in txt format instead of the default <doc> format
+
+  --markdown
+        divide articles by markdown headers # title, ## section, ### subsection, etc.
   
   -c, --compress        
         compress output files using bzip
