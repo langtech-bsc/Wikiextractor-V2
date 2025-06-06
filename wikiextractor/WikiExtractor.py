@@ -294,9 +294,10 @@ def decode_open(filename, mode='rt', encoding='utf-8'):
         return open(filename, mode, encoding=encoding)
 
 
-def collect_pages(text):
+def collect_pages(text, metadata_attrs=["ns"]):
     """
     :param text: the text of a wikipedia file dump.
+    :metadata_attrs: attributes to inlcude as metadata in the json output.
     """
     # we collect individual lines, since str.join() is significantly faster
     # than concatenation
@@ -304,6 +305,7 @@ def collect_pages(text):
     id = ''
     revid = ''
     last_id = ''
+    metadata = {}
     inText = False
     redirect = False
     for line in text:
@@ -326,6 +328,8 @@ def collect_pages(text):
             title = m.group(3)
         elif tag == 'redirect':
             redirect = True
+        elif tag in metadata_attrs:
+            metadata[tag] = m.group(3)
         elif tag == 'text':
             inText = True
             line = line[m.start(3):m.end(3)]
@@ -340,16 +344,21 @@ def collect_pages(text):
             page.append(line)
         elif tag == '/page':
             colon = title.find(':')
+            
+            # 2 options:
+            # 1) The title does not contain colon, so it is a normal article (i.e. "Isaac Newton")
+            # 2) Title contains colon (i.e. "Category:Science") and "Category" is in acceptedNamespaces
             if ((colon < 0 or (title[:colon] in acceptedNamespaces))
                 and (id != last_id)
                 and (not redirect)
                 and (not title.startswith(templateNamespace))
                 ):
-                yield (id, revid, title, page)
+                yield (id, revid, title, page, metadata)
                 last_id = id
             id = ''
             revid = ''
             page = []
+            metadata= {}
             inText = False
             redirect = False
 
@@ -530,9 +539,9 @@ def process_dump_script(input_opened,input_file, out_file, file_size, file_compr
 
     ordinal = 1  # page count
 
-    for id, revid, title, page in collect_pages(input_opened): 
+    for id, revid, title, page, metadata in collect_pages(input_opened): 
         #out :output folder path
-        if ( Extractor(id, revid, urlbase, title, page).extract(output, html_safe=True) ):
+        if ( Extractor(id, revid, urlbase, title, page, metadata).extract(output, html_safe=True) ):
             ordinal += 1
             #logging.debug("\t Doc. saved:" + str(ordinal))
         #else empty doc
