@@ -1087,7 +1087,7 @@ class Extractor():
     language = ''
 
 
-    def __init__(self, id, revid, urlbase, title, page,):
+    def __init__(self, id, revid, urlbase, title, page, metadata={}):
         """
         :param page: a list of lines.
         """
@@ -1102,6 +1102,7 @@ class Extractor():
         self.recursion_exceeded_2_errs = 0  # template recursion within expandTemplate()
         self.recursion_exceeded_3_errs = 0  # parameter recursion
         self.template_title_errs = 0
+        self.metadata = metadata
 
 
     def clean_text(self, text, mark_headers=False, expand_templates=True,
@@ -1157,7 +1158,8 @@ class Extractor():
                 'title': self.title,
                 'url': self.url,
                 'language': self.language,
-                'text': "\n".join(text)
+                **self.metadata, 
+                'text': "\n".join(text),
             }
 
             if(self.generator): #yield doc
