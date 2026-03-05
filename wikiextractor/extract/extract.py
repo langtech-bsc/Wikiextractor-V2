@@ -21,7 +21,7 @@ warnings.filterwarnings('ignore', module='bs4')
 # ----------------------------------------------------------------------
 
 # match tail after wikilink
-tailRE = re.compile('\w+')
+tailRE = re.compile(r'\w+')
 syntaxhighlight = re.compile('&lt;syntaxhighlight .*?&gt;(.*?)&lt;/syntaxhighlight&gt;', re.DOTALL)
 
 ## PARAMS ####################################################################
@@ -239,8 +239,8 @@ def clean(extractor, text, expand_templates=False, language = None, html_safe=Tr
     text = text.replace('\t', ' ')
     text = spaces.sub(' ', text)
     text = dots.sub('...', text)
-    text = re.sub(u' (,:\.\)\]»)', r'\1', text)
-    text = re.sub(u'(\[\(«) ', r'\1', text)
+    text = re.sub(r' (,:\.\)\]»)', r'\1', text)
+    text = re.sub(r'(\[\(«) ', r'\1', text)
     text = re.sub(r'\n\W+?\n', '\n', text, flags=re.U)  # lines with only punctuations
     text = text.replace(',,', ',').replace(',.', '.')
     if html_safe:
@@ -382,7 +382,7 @@ def compact(text, mark_headers=False):
                         for (i, v) in items:
                             page.append(v) #header title
                     headers.clear()
-                list_item = re.sub('[;#\*]',' ', line) 
+                list_item = re.sub(r'[;#\*]',' ', line)
                 #Fixme? sometimes list before indent: "#:"
                 list_item= re.sub("(^ *)(.+)",r"\1- \2",list_item)
                 page.append(list_item)
@@ -516,12 +516,12 @@ wgUrlProtocols = [
 # as well as U+3000 is IDEOGRAPHIC SPACE for bug 19052
 EXT_LINK_URL_CLASS = r'[^][<>"\x00-\x20\x7F\s]'
 ExtLinkBracketedRegex = re.compile(
-    '\[(((?i)' + '|'.join(wgUrlProtocols) + ')' + EXT_LINK_URL_CLASS + r'+)\s*([^\]\x00-\x08\x0a-\x1F]*?)\]',
-    re.S | re.U)
+    r'\[((' + '|'.join(wgUrlProtocols) + ')' + EXT_LINK_URL_CLASS + r'+)\s*([^\]\x00-\x08\x0a-\x1F]*?)\]',
+    re.I | re.S | re.U)
 EXT_IMAGE_REGEX = re.compile(
     r"""^(http://|https://)([^][<>"\x00-\x20\x7F\s]+)
-    /([A-Za-z0-9_.,~%\-+&;#*?!=()@\x80-\xFF]+)\.((?i)gif|png|jpg|jpeg)$""",
-    re.X | re.S | re.U)
+    /([A-Za-z0-9_.,~%\-+&;#*?!=()@\x80-\xFF]+)\.(gif|png|jpg|jpeg)$""",
+    re.I | re.X | re.S | re.U)
 
 
 def replaceExternalLinks(text):
@@ -870,7 +870,7 @@ def unescape(text):
         except:
             return text  # leave as is
 
-    return re.sub("&#?(\w+);", fixup, text)
+    return re.sub(r"&#?(\w+);", fixup, text)
 
 
 # Match HTML comments
@@ -1067,10 +1067,10 @@ class Extractor():
     discardSections = None
 
     ## Banned template names path
-    discardTemplates = None
-    
+    discardTemplates = set()
+
     ## Ignores template names path
-    ignoreTemplates = None
+    ignoreTemplates = set()
 
 
     ## Output format 
@@ -1441,7 +1441,7 @@ class Extractor():
         #  and the have just the content written in other language
         #    FORMAT  1: e.g. {{lang|fr|Je suis ....}} Return: "космонавт"
         #    FORMART 2: e.g. Template {{lang-ru|космонавт}} Return: "russian:космонавт"
-        elif(re.match('lang\-+',title,re.IGNORECASE) ):
+        elif(re.match(r'lang\-+',title,re.IGNORECASE) ):
             if(language):
                 try:
                     isoCode = parts[0].split('-')[1]
@@ -1792,8 +1792,8 @@ def findMatchingBraces(text, ldelim=0):
         reOpen = re.compile('[{]{%d,}' % ldelim)  # at least ldelim
         reNext = re.compile('[{]{2,}|}{2,}')  # at least 2 open or close bracces
     else:
-        reOpen = re.compile('{{2,}|\[{2,}')
-        reNext = re.compile('{{2,}|}{2,}|\[{2,}|]{2,}')  # at least 2
+        reOpen = re.compile(r'{{2,}|\[{2,}')
+        reNext = re.compile(r'{{2,}|}{2,}|\[{2,}|]{2,}')  # at least 2
 
     cur = 0
     while True:
@@ -2077,7 +2077,7 @@ def sharp_ifeq(lvalue, rvalue, valueIfTrue, valueIfFalse=None, *args):
 
 
 def sharp_iferror(test, then='', Else=None, *args):
-    if re.match('<(?:strong|span|p|div)\s(?:[^\s>]*\s+)*?class="(?:[^"\s>]*\s+)*?error(?:\s[^">]*)?"', test):
+    if re.match(r'<(?:strong|span|p|div)\s(?:[^\s>]*\s+)*?class="(?:[^"\s>]*\s+)*?error(?:\s[^">]*)?"', test):
         return then
     elif Else is None:
         return test.strip()
@@ -2250,7 +2250,7 @@ def define_template(title, page):
 
     # check for redirects
     #m = re.match('#REDIRECT.*?\[\[([^\]]*)]]', page[0], re.IGNORECASE)
-    m = re.match('#REDIRE.*?\[\[([^\]]*)]]', page[0], re.IGNORECASE)
+    m = re.match(r'#REDIRE.*?\[\[([^\]]*)]]', page[0], re.IGNORECASE)
 
 
     if m:
