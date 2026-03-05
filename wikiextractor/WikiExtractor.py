@@ -681,12 +681,12 @@ def main(*args, **kwargs):
     groupP.add_argument("--discard_templates", action="store_true",
                         help="If specified, it will discard \
                               some wikipedia docs if containg some templates titles (e.g. Disambiguation, Desambiguación). \
-                              \Since most template names are usually tranlated.  \
+                              Since most template names are usually tranlated.  \
                                 See an example under config/discard_templates.txt ")
     groupP.add_argument("--ignore_templates", action="store_true",
                         help="If specified, it will not expand \
                               some templates (e.g. Millorar format). \
-                              \Since most template names are usually tranlated.  \
+                              Since most template names are usually tranlated.  \
                                 See an example under config/ignore_templates.txt ")
     groupP.add_argument("--html_safe", default=True,
                         help="use to produce HTML safe output within <doc>...</doc>")
