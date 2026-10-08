@@ -9,7 +9,7 @@ Extract a dump to plain text chunks:
 ```bash
 mkdir -p output/enwiki-text templates
 python wikiextractor/WikiExtractor.py \
-  dumps/enwiki/enwiki-latest-pages-articles.xml.bz2 \
+  data/dumps/enwiki/enwiki-20261001-pages-articles.xml.bz2 \
   --output output/enwiki-text \
   --templates templates/enwiki-templates.txt \
   --txt
@@ -20,7 +20,7 @@ Extract Markdown-formatted article text as JSONL:
 ```bash
 mkdir -p output/enwiki-markdown-jsonl templates
 python wikiextractor/WikiExtractor.py \
-  dumps/enwiki/enwiki-latest-pages-articles.xml.bz2 \
+  data/dumps/enwiki/enwiki-20261001-pages-articles.xml.bz2 \
   --output output/enwiki-markdown-jsonl \
   --templates templates/enwiki-templates.txt \
   --json \
@@ -32,7 +32,7 @@ Run a long extraction in the background with `nohup`:
 ```bash
 mkdir -p output/enwiki-text templates logs
 nohup python wikiextractor/WikiExtractor.py \
-  dumps/enwiki/enwiki-latest-pages-articles.xml.bz2 \
+  data/dumps/enwiki/enwiki-20261001-pages-articles.xml.bz2 \
   --output output/enwiki-text \
   --bytes 10M \
   --templates templates/enwiki-templates.txt \
@@ -63,7 +63,7 @@ Use a downloaded XML dump as input. The input can be plain XML or compressed as
 Example input:
 
 ```text
-dumps/enwiki/enwiki-latest-pages-articles.xml.bz2
+data/dumps/enwiki/enwiki-20261001-pages-articles.xml.bz2
 ```
 
 ## Recommended Plain Text Extraction
@@ -75,7 +75,7 @@ the README:
 mkdir -p output/enwiki-text templates
 
 python wikiextractor/WikiExtractor.py \
-  dumps/enwiki/enwiki-latest-pages-articles.xml.bz2 \
+  data/dumps/enwiki/enwiki-20261001-pages-articles.xml.bz2 \
   --output output/enwiki-text \
   --bytes 10M \
   --templates templates/enwiki-templates.txt \
@@ -104,7 +104,7 @@ with `--txt` to produce Markdown-like text chunks:
 mkdir -p output/enwiki-markdown templates
 
 python wikiextractor/WikiExtractor.py \
-  dumps/enwiki/enwiki-latest-pages-articles.xml.bz2 \
+  data/dumps/enwiki/enwiki-20261001-pages-articles.xml.bz2 \
   --output output/enwiki-markdown \
   --bytes 10M \
   --templates templates/enwiki-templates.txt \
@@ -132,7 +132,7 @@ object with Markdown-formatted text:
 mkdir -p output/enwiki-markdown-jsonl templates
 
 python wikiextractor/WikiExtractor.py \
-  dumps/enwiki/enwiki-latest-pages-articles.xml.bz2 \
+  data/dumps/enwiki/enwiki-20261001-pages-articles.xml.bz2 \
   --output output/enwiki-markdown-jsonl \
   --bytes 10M \
   --templates templates/enwiki-templates.txt \
@@ -164,7 +164,7 @@ Add `--compress` to write bzip2-compressed output chunks:
 
 ```bash
 python wikiextractor/WikiExtractor.py \
-  dumps/enwiki/enwiki-latest-pages-articles.xml.bz2 \
+  data/dumps/enwiki/enwiki-20261001-pages-articles.xml.bz2 \
   --output output/enwiki-text-bz2 \
   --bytes 10M \
   --templates templates/enwiki-templates.txt \
@@ -188,7 +188,7 @@ Large dumps can take a long time to parse. Use `nohup` to keep extraction runnin
 ```bash
 mkdir -p output/enwiki-markdown-jsonl templates logs
 nohup python wikiextractor/WikiExtractor.py \
-  dumps/enwiki/enwiki-latest-pages-articles.xml.bz2 \
+  data/dumps/enwiki/enwiki-20261001-pages-articles.xml.bz2 \
   --output output/enwiki-markdown-jsonl \
   --bytes 10M \
   --templates templates/enwiki-templates.txt \
@@ -232,7 +232,7 @@ By default, WikiExtractor V2 focuses on normal article pages. To include additio
 
 ```bash
 python wikiextractor/WikiExtractor.py \
-  dumps/enwiki/enwiki-latest-pages-articles.xml.bz2 \
+  data/dumps/enwiki/enwiki-20261001-pages-articles.xml.bz2 \
   --output output/enwiki-categories \
   --templates templates/enwiki-templates.txt \
   --txt \
