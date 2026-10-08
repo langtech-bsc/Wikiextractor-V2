@@ -9,20 +9,42 @@ Download the latest English Wikipedia article dump manually:
 > Warning dump size is ~25GB.
 
 ```bash
-mkdir -p dumps/enwiki
+mkdir -p data/dumps/enwiki logs
 curl -L \
-  -o dumps/enwiki/enwiki-latest-pages-articles.xml.bz2 \
+  -o data/dumps/enwiki/enwiki-latest-pages-articles.xml.bz2 \
   https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
+
+nohup curl -L \
+  -o data/dumps/enwiki/enwiki-latest-pages-articles.xml.bz2 \
+  https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2 \
+  > logs/download-wikipedia.log 2>&1 &
 ```
 
 Download selected Wikipedia article dumps with the repository helper:
 
 ```bash
-mkdir -p dumps
+mkdir -p data/dumps
 python wiki_dump_download.py \
   --download wikipedia \
   --check-langs en,ca \
-  --output-path dumps
+  --output-path data/dumps/
+```
+
+Run a long download in the background with `nohup`:
+
+```bash
+mkdir -p data/dumps logs
+nohup python wiki_dump_download.py \
+  --download wikipedia \
+  --check-langs en,ca \
+  --output-path data/dumps/ \
+  > logs/download-wikipedia.log 2>&1 &
+```
+
+Follow the log while it runs:
+
+```bash
+tail -f logs/download-wikipedia.log
 ```
 
 WikiExtractor V2 parses XML dumps, including compressed `.bz2` and `.gz` files. For most article extraction workflows, start with a `pages-articles` dump for the target language.
@@ -64,18 +86,18 @@ https://dumps.wikimedia.org/eswiki/latest/
 Download the articles dump:
 
 ```bash
-mkdir -p dumps/enwiki
+mkdir -p data/dumps/enwiki
 curl -L \
-  -o dumps/enwiki/enwiki-latest-pages-articles.xml.bz2 \
+  -o data/dumps/enwiki/enwiki-latest-pages-articles.xml.bz2 \
   https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
 ```
 
 For very large dumps, prefer a resumable downloader:
 
 ```bash
-mkdir -p dumps/enwiki
+mkdir -p data/dumps/enwiki
 wget -c \
-  -O dumps/enwiki/enwiki-latest-pages-articles.xml.bz2 \
+  -O data/dumps/enwiki/enwiki-latest-pages-articles.xml.bz2 \
   https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
 ```
 
@@ -104,20 +126,30 @@ python wiki_dump_download.py --check-langs en,ca,es
 Download Wikipedia article dumps for selected languages:
 
 ```bash
-mkdir -p dumps
+mkdir -p data/dumps/
 python wiki_dump_download.py \
   --download wikipedia \
   --check-langs en,ca,es \
-  --output-path dumps
+  --output-path data/dumps/
 ```
 
 Download all available Wikipedia article dumps:
 
 ```bash
-mkdir -p dumps
+mkdir -p data/dumps/
 python wiki_dump_download.py \
   --download wikipedia \
-  --output-path dumps
+  --output-path data/dumps/
+```
+
+For unattended downloads, run the command with `nohup` and redirect output to a log file:
+
+```bash
+mkdir -p data/dumps logs
+nohup python wiki_dump_download.py \
+  --download wikipedia \
+  --output-path data/dumps/ \
+  > logs/download-all-wikipedia.log 2>&1 &
 ```
 
 The `--download` option accepts these project types:
@@ -137,13 +169,13 @@ The `--download` option accepts these project types:
 Check that the file exists and has a non-zero size:
 
 ```bash
-ls -lh dumps/enwiki/enwiki-latest-pages-articles.xml.bz2
+ls -lh data/dumps/enwiki/enwiki-latest-pages-articles.xml.bz2
 ```
 
 Optionally test that bzip2 can read the file:
 
 ```bash
-bzip2 -tv dumps/enwiki/enwiki-latest-pages-articles.xml.bz2
+bzip2 -tv data/dumps/enwiki/enwiki-latest-pages-articles.xml.bz2
 ```
 
 Some dumps downloaded through `wiki-data-dump` may appear with a `.bz2` extension even when local extraction tools cannot read them as bzip2 streams.
@@ -154,14 +186,14 @@ The README notes that, in that case, removing the `.bz2` extension can expose a 
 Keep raw dumps, templates, and extracted output separate:
 
 ```text
-dumps/
+data/dumps/
   enwiki/
     enwiki-latest-pages-articles.xml.bz2
-templates/
-  enwiki-templates.txt
-output/
-  enwiki-text/
-  enwiki-markdown-jsonl/
+  templates/
+    enwiki-templates.txt
+  output/
+    enwiki-text/
+    enwiki-markdown-jsonl/
 ```
 
 This keeps expensive downloads reusable and lets repeated extraction jobs share the same template cache.

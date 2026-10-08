@@ -27,6 +27,28 @@ python wikiextractor/WikiExtractor.py \
   --markdown
 ```
 
+Run a long extraction in the background with `nohup`:
+
+```bash
+mkdir -p output/enwiki-text templates logs
+nohup python wikiextractor/WikiExtractor.py \
+  dumps/enwiki/enwiki-latest-pages-articles.xml.bz2 \
+  --output output/enwiki-text \
+  --bytes 10M \
+  --templates templates/enwiki-templates.txt \
+  --txt \
+  --discard_sections \
+  --discard_templates \
+  --ignore_templates \
+  > logs/parse-enwiki.log 2>&1 &
+```
+
+Follow the log while it runs:
+
+```bash
+tail -f logs/parse-enwiki.log
+```
+
 ## Setup
 
 Install the Python dependencies:
@@ -157,6 +179,31 @@ Example output:
 
 ```text
 output/enwiki-text-bz2/wiki_00.txt.bz2
+```
+
+## Run in the Background
+
+Large dumps can take a long time to parse. Use `nohup` to keep extraction running after closing the terminal:
+
+```bash
+mkdir -p output/enwiki-markdown-jsonl templates logs
+nohup python wikiextractor/WikiExtractor.py \
+  dumps/enwiki/enwiki-latest-pages-articles.xml.bz2 \
+  --output output/enwiki-markdown-jsonl \
+  --bytes 10M \
+  --templates templates/enwiki-templates.txt \
+  --json \
+  --markdown \
+  --discard_sections \
+  --discard_templates \
+  --ignore_templates \
+  > logs/parse-enwiki-markdown-jsonl.log 2>&1 &
+```
+
+Check progress:
+
+```bash
+tail -f logs/parse-enwiki-markdown-jsonl.log
 ```
 
 ## Template Cache
