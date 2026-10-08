@@ -1,7 +1,8 @@
 import requests
 import json
 from urllib.parse import urlparse, unquote
-
+import logging
+log = logging.getLogger(__name__)
 
 API_URL = "https://{lang}.wikipedia.org/w/api.php"
 
@@ -162,3 +163,45 @@ def get_wiki_lang_title(title, orig_lang, target_lang="", session=requests.Sessi
 
     return value['title'], value.get('pageid', None), target_title
     
+
+
+def get_wiki_pageid(title, lang="en", session=requests.Session(), api_url=API_URL):
+    """
+    Get the page ID of a Wikipedia page given its title and language.
+
+    Args:
+        title (str): The title of the Wikipedia page.
+        lang (str): The language code for the Wikipedia page (e.g., 'en' for English).
+        session (requests.Session): A requests session object.
+        api_url (str): The URL of the Wikipedia API.
+    
+    Returns:
+        int: The page ID of the Wikipedia page.
+    
+    Example:
+        >>> get_wiki_pageid("Albert Einstein", "en")
+        736
+
+    """
+    
+    params = {
+        "action": "query",
+        "format": "json",
+        "titles": title
+    }   
+
+    log.debug(f"Getting pageid for title: {title} in lang: {lang}")
+
+    api_url = api_url.format(lang=lang)
+    json_data = session.get(url=api_url, params=params).json()
+    id_, value = next(iter(json_data['query']['pages'].items()))
+
+    log.debug(f"Response JSON data: {json.dumps(json_data, indent=2, ensure_ascii=False)}")
+    # ============================================================
+    # Page not found
+    # ============================================================
+    if id_ == '-1':
+        return None
+
+    return value.get('pageid', None)
+
