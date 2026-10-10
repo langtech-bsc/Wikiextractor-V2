@@ -7,6 +7,15 @@ This guide explains how to choose and download Wikimedia dump files for WikiExtr
 Resolve the latest English Wikipedia article snapshot, then download the dated dump file:
 
 > Warning dump size is ~25GB.
+> https://dumps.wikimedia.org/enwiki/latest/
+
+````
+enwiki-latest-category.sql.gz                      08-Oct-2026 03:21             35,060,061
+enwiki-latest-categorylinks.sql.gz                 08-Oct-2026 02:44          2,549,901,446
+enwiki-latest-pagelinks.sql.gz                     08-Oct-2026 02:36          7,167,161,183
+enwiki-latest-pages-articles.xml.bz2               08-Oct-2026 06:11         25,800,511,704
+````
+
 
 ```bash
 mkdir -p data/dumps/enwiki logs
@@ -19,6 +28,7 @@ dump_file="data/dumps/enwiki/$(basename "$download_url")"
 curl -L -o "$dump_file" "$download_url"
 ```
 
+
 Run the same download in the background:
 
 ```bash
@@ -29,10 +39,18 @@ rss_url="${latest_url}.bz2-rss.xml"
 download_url=$(curl -Ls "$rss_url" | sed -n 's/.*href="\([^"]*pages-articles\.xml\.bz2\)".*/\1/p' | head -n 1)
 dump_file="data/dumps/enwiki/$(basename "$download_url")"
 
-nohup curl -L \
-  -o "$dump_file" \
-  "$download_url" \
-  > logs/download-wikipedia.log 2>&1 &
+nohup curl -L -o "$dump_file" "$download_url" > logs/download-wikipedia.log 2>&1 &
+
+
+table=category
+table=categorylinks
+table=pagelinks
+latest_url="https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-${table}.sql"
+rss_url="${latest_url}.gz-rss.xml"
+download_url=$(curl -Ls "$rss_url" | sed -n 's/.*href="\([^"]*\.sql\.gz\)".*/\1/p' | head -n 1)
+dump_file="data/dumps/enwiki/$(basename "$download_url")"
+
+nohup curl -L -o "$dump_file" "$download_url" > logs/download-wikipedia.log 2>&1 &
 ```
 
 Download selected Wikipedia article dumps with the repository helper:
